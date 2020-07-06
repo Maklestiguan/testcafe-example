@@ -1,8 +1,9 @@
+// Мы импортируем конструктор селектора как '$', чтобы упростить чтение кода
 import { Selector as $, t } from 'testcafe';
 
 /**
- * search exists on multiple pages so we make it a module
- * that we can then require on multiple pages
+ * Поиск используется на нескольких страницах сайта,
+ * поэтому лучше всего сделать его модулем для многоразового использования
  */
 const searchModule = {
     box:          $('input#s'),
@@ -11,7 +12,7 @@ const searchModule = {
     noResultsMsg: $('h2').withText('No posts found. Please try a different search.'),
 
   /**
-   * Search blog posts
+   * Вводит текст в поисковую строку и нажимает кнопку поиска блог постов
    * @param  {string}
    */
   async forText(text) {

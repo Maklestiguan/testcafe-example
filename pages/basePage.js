@@ -4,13 +4,13 @@ import minimist from "minimist";
 // get env from cli or use default
 const args = minimist(process.argv.slice(2));
 const env = args.env || "https://qualityshepherd.com/";
-const baseUrl = env.endsWith('/') ? env : `${env}/`; // ensure ending slash
+const baseUrl = env.endsWith('/') ? env : `${env}/`; // делаем так, чтобы ссылка всегда заканчивалась на слэш
 
 const basePage = {
   baseUrl,
 
   /**
-   * wrapper for navigateTo so we can use relative urls and append them to baseUrl
+   * обертка для метода navigateTo с ее помощью мы сможем добавлять относительные пути, без указания базового URL
    * @param  {string} relativeUrl
    */
   async goto(relativeUrl = '') {

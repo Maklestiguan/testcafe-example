@@ -1,10 +1,11 @@
+// Мы импортируем конструктор селектора как '$', чтобы упростить чтение кода
 import { Selector as $, t } from 'testcafe';
 import basePage from './basePage';
 import search from './searchModule';
 
 const homePage = {
   url:               '',
-  // include modules...
+  // добавляем модули
   search,
   posts:          $('div.post'),
   postTitleLinks: $('h2 a'),
@@ -14,8 +15,8 @@ const homePage = {
   prevPageLink:   $('a').withText('← Older Entries'),
 
   /**
-   * test if post title exists
-   * @param  {string} postTitle
+   * Проверка существует ли титул у поста
+   * @param  {string} postTitle - ожидаемый текст титула
    * @return {bool}
    */
   async postTitleExists(postTitle) {
@@ -23,7 +24,7 @@ const homePage = {
   },
 
   /**
-   * Page back till we find the post title or run out of posts
+   * Переходим на предыдущую страницу, пока не найдем пост с нужным титулом или пока не закончатся страницы с постами
    * @param  {string} postTitle
    * @return {bool}
    */

@@ -1,3 +1,4 @@
+// Мы импортируем конструктор селектора как '$', чтобы упростить чтение кода
 import { Selector as $ } from 'testcafe';
 import basePage from './basePage';
 
