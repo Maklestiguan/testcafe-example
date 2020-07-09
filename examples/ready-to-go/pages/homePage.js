@@ -4,8 +4,9 @@ import basePage from './basePage';
 import search from './searchModule';
 
 const homePage = {
+  // указываемый стартовый Url для этой страницы (относительно базового Url из basePage)
   url:               '',
-  // добавляем модули
+  // добавляем элементы страницы
   search,
   posts:          $('div.post'),
   postTitleLinks: $('h2 a'),
@@ -16,7 +17,7 @@ const homePage = {
 
   /**
    * Проверка существует ли титул у поста
-   * @param  {string} postTitle - ожидаемый текст титула
+   * @param  {string} postTitle - ожидаемый текст заголовка
    * @return {bool}
    */
   async postTitleExists(postTitle) {
@@ -24,7 +25,7 @@ const homePage = {
   },
 
   /**
-   * Переходим на предыдущую страницу, пока не найдем пост с нужным титулом или пока не закончатся страницы с постами
+   * Переходим на предыдущую страницу, пока не найдем пост с нужным заголовком или пока не закончатся страницы с постами
    * @param  {string} postTitle
    * @return {bool}
    */

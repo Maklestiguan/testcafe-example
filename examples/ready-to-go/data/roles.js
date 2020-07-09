@@ -1,7 +1,7 @@
 import { Role } from "testcafe";
 import loginPage from "../pages/loginPage";
 
-const loginPageUrl = `${loginPage.baseUrl}${loginPage.url}`;
+export const loginPageUrl = `${loginPage.baseUrl}${loginPage.url}`;
 
 /**
  * Testcafe uses `Roles` to define user roles for logins that are triggered only _once_ per test file.
@@ -32,6 +32,5 @@ export const invalidUser = Role(
   loginPageUrl,
   async () => {
     await loginPage.login("invalid", 'user');
-  },
-  { preserveUrl: true }
+  }
 );

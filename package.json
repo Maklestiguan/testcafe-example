@@ -8,20 +8,19 @@
   "main": "index.js",
   "scripts": {
     "testcafe": "./node_modules/.bin/testcafe",
-    "test": "npm run testcafe chrome tests/",
-    "all": "npm run testcafe -- -c 2 chrome:headless,firefox:headless tests/",
-    "cli": "npm run testcafe -- -c 2 chrome:headless tests/",
-    "safari": "npm run testcafe safari tests/",
-    "firefox": "npm run testcafe firefox tests/",
-    "browsers": "npm run testcafe -- -b browserstack",
-    "ie": "npm run testcafe 'browserstack:ie@11.0:Windows 10' tests/"
+    "test": "npm run testcafe chrome examples/ready-to-go/tests/",
+    "parallel": "npm run testcafe -- -c 2 chrome examples/ready-to-go/tests/",
+    "headless parallel": "npm run testcafe -- -c 2 chrome:headless examples/ready-to-go/tests/",
+    "safari": "npm run testcafe safari examples/ready-to-go/tests/",
+    "firefox": "npm run testcafe firefox examples/ready-to-go/tests/",
+    "tasks": "npm run testcafe chrome tasks/",
+    "tasks parallel": "npm run testcafe -- -c 2 chrome tasks/"
   },
   "author": "Brine",
   "license": "MIT",
   "dependencies": {
     "minimist": "^1.2.0",
     "node-fetch": "^2.6.0",
-    "testcafe": "^1.8.2",
-    "testcafe-browser-provider-browserstack": "^1.8.0"
+    "testcafe": "^1.8.2"
   }
 }
